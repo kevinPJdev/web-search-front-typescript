@@ -1,0 +1,24 @@
+.searchPage {
+  background-color: #36393F;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.searchPageLogo > img {
+  margin-top: 50px;
+  height: 500px;
+  width: 600px;
+  filter: drop-shadow(0 2px 4px #292B2F);
+}
+
+.searchBar {
+  float: left;
+  position: absolute;
+  left: 660px;
+  top: 500px;
+  z-index: 1000;
+}
