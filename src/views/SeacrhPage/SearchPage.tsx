@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import {Formik} from 'formik';
 
+import getSearchResults from '../../services/getSearchResults';
 import './SearchPage.css'; 
 const logo =  require('../../assets/logo.png');
 
@@ -27,6 +28,8 @@ export const Button = styled.button`
 `;
 
 const SearchPage = () => {
+  //const [resultArr, setResultArr] = useState<{id: number, url: string}[]>();
+
   return (
     <div className = "searchPage">
       <div className="searchPageLogo">
@@ -36,10 +39,11 @@ const SearchPage = () => {
         <Formik 
           initialValues={{searchString:""}} 
           validate={values => {
-            console.log(values);
+            //console.log(values);
           }}
           onSubmit={values=> {
-            console.log(values);
+            getSearchResults(values.searchString);
+            
           }}
           render={({
             touched,
@@ -50,7 +54,7 @@ const SearchPage = () => {
             handleSubmit
           }) => (
           <Form onSubmit={handleSubmit}>
-            <Input type="text" name="searchString"/> 
+            <Input type="text" name="searchString" onChange={handleChange}/> 
             <Button type="submit">WinSearch</Button>
           </Form>
           )}
